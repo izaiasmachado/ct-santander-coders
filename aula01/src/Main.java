@@ -4,7 +4,7 @@ public class Main {
         System.out.println("===== Questão 1 =====");
         Double radius = 10.0;
         Circle arithmetics = new Circle();
-        System.out.println("A = " + arithmetics.circleArea(radius));
+        System.out.printf("A = %.4f", arithmetics.circleArea(radius));
 
         // Questão 2
         System.out.println("===== Questão 2 =====");

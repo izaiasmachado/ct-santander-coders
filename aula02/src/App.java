@@ -55,6 +55,19 @@ public class App {
 
         System.out.println("Você acertou!");
 
+        System.out.println(" ===== Exercício 5 ===== ");
+
+        System.out.println("Digite um número inteiro e positivo: ");
+        int n = input.nextInt();
+
+        for (int j = n; j > 0; j--) {
+            for (int k = j; k > 0; k--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
         input.close();
+
     }
 }

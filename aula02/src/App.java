@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println(" ===== Exercício 1 ===== ");
         Scanner input = new Scanner(System.in);
 
+        System.out.println(" ===== Exercício 1 ===== ");
         System.out.println("Digite um número: ");
         int number = input.nextInt();
 
@@ -36,11 +36,11 @@ public class App {
         System.out.println("Digite um número inteiro e positivo: ");
         int countToWhile = input.nextInt();
 
-        int i = 0;
+        int count = 0;
 
-        while (i <= countToWhile) {
-            System.out.println(i);
-            i++;
+        while (count <= countToWhile) {
+            System.out.println(count);
+            count++;
         }
 
         System.out.println(" ===== Exercício 4 ===== ");
@@ -60,10 +60,28 @@ public class App {
         System.out.println("Digite um número inteiro e positivo: ");
         int n = input.nextInt();
 
-        for (int j = n; j > 0; j--) {
-            for (int k = j; k > 0; k--) {
+        for (int i = n; i > 0; i--) {
+            for (int j = i; j > 0; j--) {
                 System.out.print("*");
             }
+            System.out.println();
+        }
+
+        for (int i = 0; i < n; i += 2) {
+            int spaces = n - i;
+
+            for (int j = 0; j < spaces / 2; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print("*");
+            }
+
+            for (int j = 0; j < spaces / 2; j++) {
+                System.out.print(" ");
+            }
+
             System.out.println();
         }
 

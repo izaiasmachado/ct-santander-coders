@@ -22,16 +22,13 @@ public class App {
     }
 
     public static void scanEmployeesSalary(ArrayList<Employee> employees) {
-        Scanner scanner = new Scanner(System.in);
-
         for (Employee employee : employees) {
-            System.out.printf("Digite o salário bruto do funcionário %d: ", employee.getId());
-            double grossIncome = scanner.nextDouble();
+            String prompt = String.format("Digite o salário bruto do funcionário %d: ", employee.getId());
+            double grossIncome = ScannerUtils.getDoubleInput(prompt);
             employee.setGrossIncome(grossIncome);
         }
 
         System.out.println();
-        scanner.close();
     }
 
     public static void printEmployees(ArrayList<Employee> employees) {

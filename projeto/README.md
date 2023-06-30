@@ -2,7 +2,7 @@
 
 ## Sobre
 
-Este projeto é o exercício final do Coding Tank do programa Santander Coders, em parceria com a Ada. Consiste em um programa que calcula o salário líquido de funcionários com base nos salários brutos, considerando os descontos de Imposto de Renda e INSS. O código foi implementado em três classes: a principal [App](./src/App.java), a do funcionário [Employee](./src/Employee.java), uma classe para funções de utilidade [Utils](./src/Utils.java) e outra classe para funções de entrada [ScannerUtils](./src/ScannerUtils.java).
+Este projeto é o exercício final do Coding Tank do programa Santander Coders, em parceria com a Ada. Consiste em um programa que calcula o salário líquido de funcionários com base nos salários brutos, considerando os descontos de Imposto de Renda e INSS. O código foi implementado nas classes: principal [App](./src/App.java), a do funcionário [Employee](./src/Employee.java), uma classe para funções de utilidade [Utils](./src/Utils.java) e outra classe para funções de entrada [ScannerUtils](./src/ScannerUtils.java).
 
 ## Exemplo de Funcionamento
 
@@ -52,7 +52,7 @@ Salário Líquido: R$ 2925,00
 
 ## Tratamento de Erros
 
-É comum trocar a vírgula com o ponto na separação de decimais, caso isso acontece, o programa informa ao usuário do erro e como realizar a correção. Veja o exemplo a seguir,
+É comum trocar a vírgula com o ponto na separação de decimais, caso isso aconteça, o programa informa ao usuário do erro e como realizar a correção. Veja o exemplo a seguir,
 
 ```
 Digite o salário bruto do funcionário 1: a

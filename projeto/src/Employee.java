@@ -1,11 +1,8 @@
 import java.util.Formatter;
 
 public class Employee {
-    public int id;
-    public Double grossIncome;
-    public Double inss;
-    public Double tax;
-    public Double liquidIncome;
+    private int id;
+    private Double grossIncome;
 
     public void setId(int id) {
         this.id = id;
@@ -19,18 +16,11 @@ public class Employee {
         return this.grossIncome;
     }
 
-    public void setGrossIncome(double grossSalary) {
-        this.grossIncome = grossSalary;
-        this.inss = this.getInssSalaryDiscount();
-        this.tax = this.getTaxSalaryDiscount();
-        this.liquidIncome = this.getLiquidIncome();
+    public void setGrossIncome(double grossIncome) {
+        this.grossIncome = grossIncome;
     }
 
     public double getInss() {
-        return this.inss;
-    }
-
-    public double getInssSalaryDiscount() {
         double inssDiscount = this.getInssPercentage();
         return this.grossIncome * inssDiscount;
     }
@@ -48,10 +38,6 @@ public class Employee {
     }
 
     public double getTax() {
-        return this.tax;
-    }
-
-    public double getTaxSalaryDiscount() {
         double taxDiscount = this.getTaxPercentage();
         return this.grossIncome * taxDiscount;
     }
@@ -69,7 +55,9 @@ public class Employee {
     }
 
     public double getLiquidIncome() {
-        return this.grossIncome - this.inss - this.tax;
+        double inss = this.getInss();
+        double tax = this.getTax();
+        return this.grossIncome - inss - tax;
     }
 
     public String toString() {

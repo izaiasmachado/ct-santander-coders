@@ -2,7 +2,7 @@ import java.util.Formatter;
 
 public class Employee {
     private int id;
-    private Double grossIncome;
+    private double grossIncome;
 
     public void setId(int id) {
         this.id = id;

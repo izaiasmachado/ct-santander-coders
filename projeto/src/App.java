@@ -1,9 +1,8 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class App {
-    public static ArrayList<Employee> funcionarios = new ArrayList<Employee>();
-    public static int NUMBER_OF_EMPLOYEES = 5;
+    protected static ArrayList<Employee> funcionarios = new ArrayList<Employee>();
+    protected static int NUMBER_OF_EMPLOYEES = 5;
 
     public static void main(String[] args) throws Exception {
         int numberOfEmployees = NUMBER_OF_EMPLOYEES;

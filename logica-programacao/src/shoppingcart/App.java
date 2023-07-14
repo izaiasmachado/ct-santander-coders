@@ -13,7 +13,7 @@ public class App {
     }
 
     public static void askForItem(ShoppingCart cart) {
-        System.out.println("Digite o nome do: ");
+        System.out.println("Digite o nome do item: ");
         String item = scanner.nextLine();
 
         System.out.println("Digite a quantidade: ");
@@ -29,6 +29,7 @@ public class App {
             askForItem(cart);
 
             System.out.println("Você quer adicionar outro item? [s/n]");
+            scanner.nextLine();
             String answer = scanner.nextLine();
 
             shouldAskForItem = answer.equals("s");

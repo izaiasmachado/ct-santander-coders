@@ -16,12 +16,8 @@ public class ShoppingCart {
     private static double REGULAR_PRICE = 1.45;
 
     public void addItem(String item, int quantity) {
-        if (this.items.containsKey(item)) {
-            int previousQuantity = this.items.get(item);
-            this.items.put(item, previousQuantity + quantity);
-        } else {
-            this.items.put(item, quantity);
-        }
+        int totalQuantity = this.getQuantity(item) + quantity;
+        this.items.put(item, totalQuantity);
     }
 
     public int getQuantity(String item) {
@@ -38,11 +34,19 @@ public class ShoppingCart {
         return false;
     }
 
-    public double getIndividualPrice(String item) {
+    public boolean hasPromotionalQuantity(String item) {
         int quantity = this.getQuantity(item);
-        boolean hasPromotionalQuantity = (quantity >= PROMOTIONAL_QUANTITY);
+        return (quantity >= PROMOTIONAL_QUANTITY);
+    }
+
+    public boolean hasPromotionalPrice(String item) {
         boolean isPromotionalItem = this.isPromotionalItem(item);
-        boolean isPromotionalPrice = isPromotionalItem && hasPromotionalQuantity;
+        boolean hasPromotionalQuantity = this.hasPromotionalQuantity(item);
+        return (isPromotionalItem && hasPromotionalQuantity);
+    }
+
+    public double getIndividualPrice(String item) {
+        boolean isPromotionalPrice = this.hasPromotionalPrice(item);
         double individualPrice = (isPromotionalPrice) ? PROMOTIONAL_PRICE : REGULAR_PRICE;
         return individualPrice;
     }

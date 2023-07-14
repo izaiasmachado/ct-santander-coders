@@ -1,3 +1,5 @@
+package temperatureconversor;
+
 public class App {
     public static void main(String[] args) throws Exception {
         double fahrenheit = 212;

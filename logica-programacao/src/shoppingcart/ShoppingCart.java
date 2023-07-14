@@ -1,3 +1,5 @@
+package shoppingcart;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +13,7 @@ public class ShoppingCart {
             "tomate",
             "caqui"
     };
-    private static int PROMOTIONAL_QUANTITY = 10;
+    private static int PROMOTIONAL_QUANTITY = 11;
     private static double PROMOTIONAL_PRICE = 1.25;
     private static double REGULAR_PRICE = 1.45;
 

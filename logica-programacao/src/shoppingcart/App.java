@@ -1,3 +1,5 @@
+package shoppingcart;
+
 import java.util.Scanner;
 
 public class App {

@@ -31,15 +31,6 @@ public class ShoppingCart {
         this.items.put(item, totalQuantity);
     }
 
-    public boolean isPromotionalItem(String item) {
-        for (String promotionalItem : promotionalItems) {
-            if (item.equals(promotionalItem)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public boolean hasPromotionalPrice(int quantity) {
         return (quantity >= PROMOTIONAL_QUANTITY);
     }

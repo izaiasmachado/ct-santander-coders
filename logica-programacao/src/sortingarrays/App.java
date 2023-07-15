@@ -8,8 +8,8 @@ public class App {
         int[] numbers = { 5, 4, 1, 2, 3 };
         int[] ascendingOrder = sortAscendingOrder(numbers);
         int[] descendingOrder = sortDescendingOrder(numbers);
-        int[] evenNumbers = onlyEvenNumbers(ascendingOrder);
-        int[] oddNumbers = onlyOddNumbers(ascendingOrder);
+        int[] evenNumbers = filterEvenNumbers(ascendingOrder);
+        int[] oddNumbers = filterOddNumbers(ascendingOrder);
 
         System.out.println(Arrays.toString(numbers));
         System.out.println(Arrays.toString(ascendingOrder));
@@ -62,7 +62,7 @@ public class App {
         return array;
     }
 
-    public static int[] onlyEvenNumbers(int[] numbers) {
+    public static int[] filterEvenNumbers(int[] numbers) {
         ArrayList<Integer> evenNumbers = new ArrayList<Integer>();
 
         for (int i = 0; i < numbers.length; i++) {
@@ -75,7 +75,7 @@ public class App {
         return evenNumbersArray;
     }
 
-    public static int[] onlyOddNumbers(int[] numbers) {
+    public static int[] filterOddNumbers(int[] numbers) {
         ArrayList<Integer> oddNumbers = new ArrayList<Integer>();
 
         for (int i = 0; i < numbers.length; i++) {

@@ -7,10 +7,14 @@ public class App {
         int[] numbers = { 5, 4, 1, 2, 3 };
         int[] ascendingOrder = sortAscendingOrder(numbers);
         int[] descendingOrder = sortDescendingOrder(numbers);
+        int[] evenNumbers = onlyEvenNumbers(ascendingOrder);
+        int[] oddNumbers = onlyOddNumbers(ascendingOrder);
 
         System.out.println(Arrays.toString(numbers));
         System.out.println(Arrays.toString(ascendingOrder));
         System.out.println(Arrays.toString(descendingOrder));
+        System.out.println(Arrays.toString(evenNumbers));
+        System.out.println(Arrays.toString(oddNumbers));
     }
 
     public static void swap(int[] numbers, int i, int j) {
@@ -45,5 +49,33 @@ public class App {
         }
 
         return descendingOrder;
+    }
+
+    public static int[] onlyEvenNumbers(int[] numbers) {
+        int[] evenNumbers = new int[numbers.length];
+        int evenNumbersCount = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                evenNumbers[evenNumbersCount] = numbers[i];
+                evenNumbersCount++;
+            }
+        }
+
+        return evenNumbers;
+    }
+
+    public static int[] onlyOddNumbers(int[] numbers) {
+        int[] evenNumbers = new int[numbers.length];
+        int evenNumbersCount = 0;
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 != 0) {
+                evenNumbers[evenNumbersCount] = numbers[i];
+                evenNumbersCount++;
+            }
+        }
+
+        return evenNumbers;
     }
 }

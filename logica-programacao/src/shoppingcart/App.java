@@ -12,27 +12,17 @@ public class App {
         printTotalPrice(cart);
     }
 
-    public static void askForItem(ShoppingCart cart) {
-        System.out.println("Digite o nome do item: ");
-        String item = scanner.nextLine();
-
-        System.out.println("Digite a quantidade: ");
+    public static void askForItem(ShoppingCart cart, String item) {
+        System.out.printf("Digite a quantidade de %ss: ", item);
         int quantity = scanner.nextInt();
-
         cart.addItem(item, quantity);
     }
 
     public static void askForItems(ShoppingCart cart) {
-        boolean shouldAskForItem = true;
+        String[] items = cart.getPromotionalItems();
 
-        while (shouldAskForItem) {
-            askForItem(cart);
-
-            System.out.println("Você quer adicionar outro item? [s/n]");
-            scanner.nextLine();
-            String answer = scanner.nextLine();
-
-            shouldAskForItem = answer.equals("s");
+        for (String item : items) {
+            askForItem(cart, item);
         }
     }
 

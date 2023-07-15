@@ -1,5 +1,6 @@
 package sortingarrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class App {
@@ -51,31 +52,39 @@ public class App {
         return descendingOrder;
     }
 
+    public static int[] fromArrayListToArray(ArrayList<Integer> arrayList) {
+        int[] array = new int[arrayList.size()];
+
+        for (int i = 0; i < arrayList.size(); i++) {
+            array[i] = arrayList.get(i);
+        }
+
+        return array;
+    }
+
     public static int[] onlyEvenNumbers(int[] numbers) {
-        int[] evenNumbers = new int[numbers.length];
-        int evenNumbersCount = 0;
+        ArrayList<Integer> evenNumbers = new ArrayList<Integer>();
 
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 == 0) {
-                evenNumbers[evenNumbersCount] = numbers[i];
-                evenNumbersCount++;
+                evenNumbers.add(numbers[i]);
             }
         }
 
-        return evenNumbers;
+        int[] evenNumbersArray = fromArrayListToArray(evenNumbers);
+        return evenNumbersArray;
     }
 
     public static int[] onlyOddNumbers(int[] numbers) {
-        int[] evenNumbers = new int[numbers.length];
-        int evenNumbersCount = 0;
+        ArrayList<Integer> oddNumbers = new ArrayList<Integer>();
 
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 != 0) {
-                evenNumbers[evenNumbersCount] = numbers[i];
-                evenNumbersCount++;
+                oddNumbers.add(numbers[i]);
             }
         }
 
-        return evenNumbers;
+        int[] oddNumbersArray = fromArrayListToArray(oddNumbers);
+        return oddNumbersArray;
     }
 }

@@ -1,8 +1,19 @@
 package exercicio02;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Solution {
-    private static double truncatePlaces = 2;
-    private static double truncateFactor = Math.pow(10, truncatePlaces);
+    public static double round(double input) {
+        double truncatePlaces = 2;
+        double truncateFactor = Math.pow(10, truncatePlaces);
+
+        BigDecimal bd = new BigDecimal(input * truncateFactor / truncateFactor);
+        bd = bd.setScale(3, RoundingMode.DOWN);
+        bd = bd.setScale(2, RoundingMode.HALF_DOWN);
+
+        return bd.doubleValue();
+    }
 
     public static double[] custosCarro(double[] input) {
         double salePrice = input[0];
@@ -12,8 +23,8 @@ public class Solution {
         double distributorPercentage = distributorCost / salePrice * 100;
         double taxesPercentage = taxesCost / salePrice * 100;
 
-        double roundedDistributorPercentage = Math.round(distributorPercentage * truncateFactor) / truncateFactor;
-        double roundedTaxesPercentage = Math.round(taxesPercentage * truncateFactor) / truncateFactor;
+        double roundedDistributorPercentage = round(distributorPercentage);
+        double roundedTaxesPercentage = round(taxesPercentage);
 
         double[] output = { roundedDistributorPercentage, roundedTaxesPercentage };
         return output;

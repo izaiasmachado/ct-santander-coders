@@ -1,8 +1,19 @@
 package exercicio03;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Solution {
-    private static double truncatePlaces = 2;
-    private static double truncateFactor = Math.pow(10, truncatePlaces);
+    public static double round(double input) {
+        double truncatePlaces = 2;
+        double truncateFactor = Math.pow(10, truncatePlaces);
+
+        BigDecimal bd = new BigDecimal(input * truncateFactor / truncateFactor);
+        bd = bd.setScale(3, RoundingMode.DOWN);
+        bd = bd.setScale(2, RoundingMode.HALF_DOWN);
+
+        return bd.doubleValue();
+    }
 
     public static double getRaisePercentage(double workedYears) {
         if (workedYears >= 1 && workedYears < 5) {
@@ -27,7 +38,7 @@ public class Solution {
         double totalPercentage = raisePercentage + inflationPercentage;
 
         double newSalary = (1 + totalPercentage) * salary;
-        double roundedNewSalary = Math.round(newSalary * truncateFactor) / truncateFactor;
+        double roundedNewSalary = round(newSalary);
 
         return roundedNewSalary;
     }

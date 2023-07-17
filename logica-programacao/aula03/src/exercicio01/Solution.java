@@ -1,4 +1,4 @@
-package condicionais;
+package exercicio01;
 
 public class Solution {
     private static double PROMOTIONAL_PRICE = 1.25;

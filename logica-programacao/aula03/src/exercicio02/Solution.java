@@ -1,4 +1,4 @@
-package operadores;
+package exercicio02;
 
 public class Solution {
     private static double truncatePlaces = 2;

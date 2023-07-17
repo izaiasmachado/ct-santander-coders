@@ -27,9 +27,9 @@ public class Solution {
         double totalPercentage = raisePercentage + inflationPercentage;
 
         double newSalary = (1 + totalPercentage) * salary;
-        double truncatedNewSalary = Math.round(newSalary * truncateFactor) / truncateFactor;
+        double roundedNewSalary = Math.round(newSalary * truncateFactor) / truncateFactor;
 
-        return truncatedNewSalary;
+        return roundedNewSalary;
     }
 
     public static void main(String[] args) {

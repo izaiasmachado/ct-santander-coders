@@ -12,10 +12,10 @@ public class Solution {
         double distributorPercentage = distributorCost / salePrice * 100;
         double taxesPercentage = taxesCost / salePrice * 100;
 
-        double truncatedDistributorPercentage = Math.round(distributorPercentage * truncateFactor) / truncateFactor;
-        double truncatedTaxesPercentage = Math.round(taxesPercentage * truncateFactor) / truncateFactor;
+        double roundedDistributorPercentage = Math.round(distributorPercentage * truncateFactor) / truncateFactor;
+        double roundedTaxesPercentage = Math.round(taxesPercentage * truncateFactor) / truncateFactor;
 
-        double[] output = { truncatedDistributorPercentage, truncatedTaxesPercentage };
+        double[] output = { roundedDistributorPercentage, roundedTaxesPercentage };
         return output;
     }
 

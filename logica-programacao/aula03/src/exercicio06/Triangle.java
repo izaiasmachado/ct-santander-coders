@@ -35,4 +35,19 @@ public class Triangle {
         double area = Math.sqrt(p * (p - a) * (p - b) * (p - c));
         return area;
     }
+
+    public String toString() {
+        String output;
+
+        if (!this.isTriangle()) {
+            return "Lados " + this.a + ", " + this.b + ", " + this.c + " não formam um triângulo";
+        }
+
+        output = "Triângulo de lados: " + this.a + ", " + this.b + ", " + this.c + "\n";
+        output += "Perímetro: " + this.getPerimeter() + "\n";
+        output += "Área: " + this.calcularArea();
+        output += "\n";
+
+        return output;
+    }
 }

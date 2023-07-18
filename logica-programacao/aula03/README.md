@@ -155,6 +155,8 @@ public class Solution {
 
 Utilize a [fórmula de Heron](https://mundoeducacao.uol.com.br/matematica/formula-heron.htm) para calcular a área do Triângulo.
 
+Para validar se é um triângulo um de seus lados deve ser maior que o valor absoluto (módulo) da diferença dos outros dois lados e menor que a soma dos outros dois lados. Caso não seja triângulo, faça que calcular área retorne zero.
+
 ```java
     public double calcularArea() {
         // Seu código aqui

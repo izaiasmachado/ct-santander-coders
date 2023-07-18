@@ -7,6 +7,11 @@ public class Triangle {
         this.a = a;
         this.b = b;
         this.c = c;
+
+        if (!this.isTriangle()) {
+            throw new IllegalArgumentException(
+                    "Lados " + this.a + ", " + this.b + ", " + this.c + " não formam um triângulo");
+        }
     }
 
     public boolean isTriangle() {
@@ -38,10 +43,6 @@ public class Triangle {
 
     public String toString() {
         String output;
-
-        if (!this.isTriangle()) {
-            return "Lados " + this.a + ", " + this.b + ", " + this.c + " não formam um triângulo";
-        }
 
         output = "Triângulo de lados: " + this.a + ", " + this.b + ", " + this.c + "\n";
         output += "Perímetro: " + this.getPerimeter() + "\n";

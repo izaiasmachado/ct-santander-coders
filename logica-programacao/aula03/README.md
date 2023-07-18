@@ -150,3 +150,13 @@ public class Solution {
     }
 }
 ```
+
+## Atividade 06
+
+Utilize a [fórmula de Heron](https://mundoeducacao.uol.com.br/matematica/formula-heron.htm) para calcular a área do Triângulo.
+
+```java
+    public double calcularArea() {
+        // Seu código aqui
+    }
+```

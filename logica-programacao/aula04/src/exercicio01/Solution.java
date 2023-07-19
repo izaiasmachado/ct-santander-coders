@@ -1,6 +1,7 @@
 package exercicio01;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Arrays;
 
 public class Solution {
@@ -60,7 +61,14 @@ public class Solution {
     }
 
     public static double round(double numero) {
-        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        String decimalSeparator = getDecimalSeparator();
+        String pattern = String.format("0%s00", decimalSeparator);
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
         return Double.parseDouble(decimalFormat.format(numero));
+    }
+
+    public static String getDecimalSeparator() {
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+        return Character.toString(symbols.getDecimalSeparator());
     }
 }

@@ -195,3 +195,23 @@ public class Solution
     }
 }
 ```
+
+## Atividade 07
+
+Crie uma função que receberá um array com três valores que correspondem a possíveis lados de um triângulo. Na função, validar se os dados fornecidos formam um triângulo.
+
+OBS: para formar um triângulo, o valor de cada lado deve ser menor que a soma dos outros 2 lados.
+
+#
+
+A função deverá ser criada seguindo a estrutura abaixo:
+
+```
+public class Solution
+{
+    public static void eUmTriangulo(int[] input) throws LadosInvalidosException
+    {
+        /// Seu código aqui
+    }
+}
+```

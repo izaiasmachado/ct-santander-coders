@@ -1,54 +1,51 @@
 package exercicio07;
 
-public class Triangle {
-    private double a, b, c;
+import java.util.ArrayList;
 
-    public Triangle(double a, double b, double c) throws LadosInvalidosException {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+public class Triangle {
+    private ArrayList<Integer> sides;
+
+    public Triangle(int[] input) throws LadosInvalidosException {
+        setSides(input);
 
         if (!this.isTriangle()) {
-            throw new LadosInvalidosException(
-                    "Lados " + this.a + ", " + this.b + ", " + this.c + " não formam um triângulo");
+            throw new LadosInvalidosException();
         }
     }
 
+    public void setSides(int[] sourceSides) throws LadosInvalidosException {
+        sides = new ArrayList<>();
+
+        for (int side : sourceSides) {
+            sides.add(side);
+        }
+
+        sides.sort(null);
+    }
+
     public boolean isTriangle() {
-        if (this.a > Math.abs(this.b - this.c) && this.a < (this.b + this.c)) {
-            return true;
-        } else if (this.b > Math.abs(this.a - this.c) && this.b < (this.a + this.c)) {
-            return true;
-        } else if (this.c > Math.abs(this.a - this.b) && this.c < (this.a + this.b)) {
+        if (sides.size() != 3) {
+            return false;
+        }
+
+        int biggest = sides.get(2);
+        int sum = sides.get(0) + sides.get(1);
+        int diff = sides.get(1) - sides.get(0);
+
+        if (biggest > diff && biggest < sum) {
             return true;
         }
 
         return false;
     }
 
-    public double getPerimeter() {
-        return this.a + this.b + this.c;
-    }
+    public int getPerimeter() {
+        int sum = 0;
 
-    public double calcularArea() {
-        double p = this.getPerimeter() / 2;
-
-        if (!this.isTriangle()) {
-            return 0;
+        for (int side : sides) {
+            sum += side;
         }
 
-        double area = Math.sqrt(p * (p - a) * (p - b) * (p - c));
-        return area;
-    }
-
-    public String toString() {
-        String output;
-
-        output = "Triângulo de lados: " + this.a + ", " + this.b + ", " + this.c + "\n";
-        output += "Perímetro: " + this.getPerimeter() + "\n";
-        output += "Área: " + this.calcularArea();
-        output += "\n";
-
-        return output;
+        return sum;
     }
 }

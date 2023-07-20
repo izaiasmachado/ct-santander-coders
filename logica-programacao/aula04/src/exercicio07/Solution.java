@@ -48,12 +48,8 @@ public class Solution {
     }
 
     public static void eUmTriangulo(int[] input) throws LadosInvalidosException {
-        double a = input[0];
-        double b = input[1];
-        double c = input[2];
-
         // Coloquei assim porque já tem prints nos testes, então achei melhor deixar
         // desse modo
-        new Triangle(a, b, c);
+        new Triangle(input);
     }
 }

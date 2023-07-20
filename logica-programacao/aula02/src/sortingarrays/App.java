@@ -18,10 +18,14 @@ public class App {
         System.out.println(Arrays.toString(oddNumbers));
     }
 
-    public static void swap(int[] numbers, int i, int j) {
-        int aux = numbers[i];
-        numbers[i] = numbers[j];
-        numbers[j] = aux;
+    public static int[] swap(int[] source, int i, int j) {
+        int destination[] = source.clone();
+
+        int temp = destination[i];
+        destination[i] = destination[j];
+        destination[j] = temp;
+
+        return destination;
     }
 
     public static int[] sortAscendingOrder(int[] numbers) {
@@ -30,7 +34,7 @@ public class App {
         for (int i = 0; i < ascendingOrder.length; i++) {
             for (int j = 0; j < ascendingOrder.length - 1; j++) {
                 if (ascendingOrder[j] > ascendingOrder[j + 1]) {
-                    swap(ascendingOrder, j, j + 1);
+                    ascendingOrder = swap(ascendingOrder, j, j + 1);
                 }
             }
         }
@@ -44,7 +48,7 @@ public class App {
         for (int i = 0; i < descendingOrder.length; i++) {
             for (int j = 0; j < descendingOrder.length - 1; j++) {
                 if (descendingOrder[j] < descendingOrder[j + 1]) {
-                    swap(descendingOrder, j, j + 1);
+                    descendingOrder = swap(descendingOrder, j, j + 1);
                 }
             }
         }

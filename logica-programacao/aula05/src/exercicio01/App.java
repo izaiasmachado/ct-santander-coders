@@ -1,5 +1,6 @@
 package exercicio01;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -22,6 +23,10 @@ public class App {
     public static void handleAskForCartItem(ShoppingCart cart, String item) {
         try {
             askForItem(cart, item);
+        } catch (InputMismatchException e) {
+            System.out.println("Digite uma quantidade inteira de itens!");
+            scanner.nextLine();
+            handleAskForCartItem(cart, item);
         } catch (CartException e) {
             System.out.println(e.getMessage());
             handleAskForCartItem(cart, item);

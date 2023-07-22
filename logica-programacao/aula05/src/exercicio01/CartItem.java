@@ -31,11 +31,10 @@ public class CartItem {
     }
 
     public void validateQuantity(int quantity) throws CartException {
-        if (quantity == 0) {
+        if (quantity == 0)
             throw new CannotLeaveEmptyItem();
-        } else if (quantity < 0) {
+        if (quantity < 0)
             throw new CannotAddNegativeNumberOfItems();
-        }
     }
 
     public boolean hasPromotionalPrice() {

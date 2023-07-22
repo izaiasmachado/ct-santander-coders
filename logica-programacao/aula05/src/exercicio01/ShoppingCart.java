@@ -16,7 +16,7 @@ public class ShoppingCart {
         return promotionalItems;
     }
 
-    public void addItem(String item, int quantity) throws Exception {
+    public void addItem(String item, int quantity) throws CartException {
         CartItem cartItem = new CartItem(item, quantity);
         this.items.add(cartItem);
     }

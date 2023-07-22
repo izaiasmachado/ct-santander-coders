@@ -11,18 +11,27 @@ public class App {
         printTotalPrice(cart);
     }
 
-    public static void askForItem(ShoppingCart cart, String item) throws Exception {
-        System.out.printf("Digite a quantidade de %ss: ", item);
-        int quantity = scanner.nextInt();
-        cart.addItem(item, quantity);
-    }
-
-    public static void askForItems(ShoppingCart cart) throws Exception {
+    public static void askForItems(ShoppingCart cart) {
         String[] items = cart.getPromotionalItems();
 
         for (String item : items) {
-            askForItem(cart, item);
+            handleAskForCartItem(cart, item);
         }
+    }
+
+    public static void handleAskForCartItem(ShoppingCart cart, String item) {
+        try {
+            askForItem(cart, item);
+        } catch (CartException e) {
+            System.out.println(e.getMessage());
+            handleAskForCartItem(cart, item);
+        }
+    }
+
+    public static void askForItem(ShoppingCart cart, String item) throws CartException {
+        System.out.printf("Digite a quantidade de %ss: ", item);
+        int quantity = scanner.nextInt();
+        cart.addItem(item, quantity);
     }
 
     public static void printTotalPrice(ShoppingCart cart) {

@@ -8,7 +8,7 @@ public class CartItem {
     private String name;
     private int quantity = 0;
 
-    public CartItem(String name, int quantity) throws Exception {
+    public CartItem(String name, int quantity) throws CartException {
         this.setName(name);
         this.setQuantity(quantity);
     }
@@ -21,7 +21,7 @@ public class CartItem {
         return name;
     }
 
-    public void setQuantity(int quantity) throws Exception {
+    public void setQuantity(int quantity) throws CartException {
         validateQuantity(quantity);
         this.quantity = quantity;
     }
@@ -30,9 +30,7 @@ public class CartItem {
         return quantity;
     }
 
-    public void validateQuantity(int quantity) throws Exception {
-        System.out.println(quantity);
-
+    public void validateQuantity(int quantity) throws CartException {
         if (quantity == 0) {
             throw new CannotLeaveEmptyItem();
         } else if (quantity < 0) {

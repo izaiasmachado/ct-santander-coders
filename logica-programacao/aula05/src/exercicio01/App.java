@@ -7,7 +7,6 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         ShoppingCart cart = new ShoppingCart();
-
         askForItems(cart);
         printTotalPrice(cart);
     }
@@ -27,7 +26,7 @@ public class App {
     }
 
     public static void printTotalPrice(ShoppingCart cart) {
-        double totalPrice = cart.getTotalPrice();
+        double totalPrice = cart.getTotalCartItemsPrice();
         System.out.printf("Preço total da compra: R$ %.2f\n", totalPrice);
     }
 }
